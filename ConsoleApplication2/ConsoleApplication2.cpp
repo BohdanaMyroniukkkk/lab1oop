@@ -56,3 +56,32 @@ void task2() {
         cout << "Number of the last odd element: " << max_idx << endl;
          }
 }
+
+//задача3
+
+void task3() {
+    cout << "Input size of array: ";
+    int n;
+    cin >> n;
+    vector<double> a(n);
+    for (int i = 0; i < n; i++) {
+        cout << "Input " << i + 1 << "element of array: ";
+        cin >> a[i];
+    }
+    unordered_map<double, int> count;
+    for (double num : a) {
+        count[num]++;
+    }
+    double sum_repeats = 0;
+    double product_unique = 1;
+    for (auto it : count) {
+        if (it.second > 1) {
+            sum_repeats += it.first * it.second;
+        }
+        else {
+            product_unique *= it.first;
+        }
+    }
+    cout << "Sum of repeated numbers: " << sum_repeats << endl;
+    cout << "Product of non-repeating numbers: " << product_unique << endl;
+}
