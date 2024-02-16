@@ -85,3 +85,24 @@ void task3() {
     cout << "Sum of repeated numbers: " << sum_repeats << endl;
     cout << "Product of non-repeating numbers: " << product_unique << endl;
 }
+
+int main()
+{
+    int task;
+    cout << "Input task number (1, 2, 3): ";
+    cin >> task;
+    switch (task) {
+    case 1:
+        task1();
+        break;
+    case 2:
+        task2();
+        break;
+    case 3:
+        task3();
+        break;
+    default:
+        cout << "Wrong task number." << endl;
+    }
+    return 0;
+}
