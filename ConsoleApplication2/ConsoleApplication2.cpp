@@ -28,3 +28,31 @@ void task1() {
     }
 }
 
+//задача2
+void task2() {
+    int n;
+    cout << "Input size of array: ";
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+        cout << "Input " << i + 1 << "element of array: ";
+        cin >> a[i];
+    }
+    int c, d;
+    cout << "Left limit of the range: ";
+    cin >> c;
+    cout << "Right limit of the range: ";
+    cin >> d;
+    int max_idx = c;
+    for (int i = d; i >= c; i--) {
+        if (a[i] > a[max_idx]) {
+            max_idx = i;
+        }
+    }
+    if (max_idx == c) {
+        cout << "There are no even numbers in the range." << endl;
+    }
+    else {
+        cout << "Number of the last odd element: " << max_idx << endl;
+         }
+}
